@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>相談支援ゆに和</title>
+<meta name="description" content="障害のある方とご家族のための相談支援事業所。サービス等利用計画の作成や、福祉サービス利用のご相談をお受けします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: calm single column, one job per section, large phone-friendly contact buttons. */
+:root{
+  --bg:#f5f9f9;
+  --surface:#ffffff;
+  --ink:#1b2a2e;
+  --muted:#52666b;
+  --primary:#1f6b73;
+  --accent:#e3a82f;
+  --line:#d5e2e3;
+  --todo-bg:#fff4cc;
+  --todo-ink:#6b4a00;
+  --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  --font-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a1c;--surface:#172427;--ink:#e6f0f1;--muted:#9bb0b4;
+    --primary:#6cc3cc;--accent:#f0bd4f;--line:#2a3d41;
+    --todo-bg:#3a2f0e;--todo-ink:#f3d98a;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a1c;--surface:#172427;--ink:#e6f0f1;--muted:#9bb0b4;
+  --primary:#6cc3cc;--accent:#f0bd4f;--line:#2a3d41;
+  --todo-bg:#3a2f0e;--todo-ink:#f3d98a;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.85;font-size:16px}
+a{color:var(--primary)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header.site{background:var(--surface);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--ink);text-decoration:none}
+.brand small{display:block;font-family:var(--font-body);font-weight:400;font-size:.72rem;color:var(--muted)}
+nav ul{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0;font-size:.9rem}
+nav a{color:var(--ink);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+.hero{padding:44px 0 36px}
+.hero p.lead-in{margin:0 0 10px;color:var(--primary);font-weight:700;font-size:.9rem;letter-spacing:.08em}
+.hero h1{font-family:var(--font-display);font-size:clamp(1.65rem,6vw,2.3rem);line-height:1.5;margin:0 0 16px;text-wrap:balance}
+.hero p{margin:0 0 22px;color:var(--muted);max-width:34em}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem}
+.btn.primary{background:var(--primary);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0f1a1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#0f1a1c}}
+.btn.ghost{border:2px solid var(--primary);color:var(--primary);background:transparent}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--font-display);font-size:1.45rem;margin:0 0 18px;text-wrap:balance;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:6px;height:1.3em;background:var(--accent);border-radius:3px;flex:none}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+.card h3{font-family:var(--font-display);font-size:1.05rem;margin:0 0 6px;color:var(--primary)}
+.card p{margin:0;font-size:.94rem;color:var(--muted)}
+.note{background:var(--surface);border-left:5px solid var(--accent);border-radius:8px;padding:14px 16px;margin-top:18px;font-size:.95rem}
+ol.flow{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.flow li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 64px;position:relative}
+ol.flow li::before{content:counter(s);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:700;font-family:var(--font-display)}
+:root[data-theme="dark"] ol.flow li::before{color:#0f1a1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) ol.flow li::before{color:#0f1a1c}}
+ol.flow strong{display:block;font-family:var(--font-display)}
+ol.flow span{font-size:.92rem;color:var(--muted)}
+dl.info{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+dl.info div{display:grid;grid-template-columns:8.5em 1fr;gap:6px 14px;padding:13px 18px;border-top:1px solid var(--line)}
+dl.info div:first-child{border-top:0}
+dl.info dt{font-weight:700;color:var(--primary);font-size:.92rem}
+dl.info dd{margin:0;overflow-wrap:anywhere}
+@media (max-width:460px){dl.info div{grid-template-columns:1fr;gap:0}}
+.todo{background:var(--todo-bg);color:var(--todo-ink);padding:1px 8px;border-radius:6px;font-size:.9em}
+.contact-box{background:var(--primary);color:#fff;border-radius:18px;padding:26px 22px}
+:root[data-theme="dark"] .contact-box{color:#0f1a1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contact-box{color:#0f1a1c}}
+.contact-box h2{margin-top:0}
+.contact-box h2::before{background:var(--accent)}
+.contact-box p{margin:0 0 14px}
+.contact-box .tel{font-family:var(--font-display);font-size:1.7rem;font-weight:700;letter-spacing:.03em}
+.contact-box a.btn{background:#fff;color:#1f6b73}
+.contact-box a:focus-visible{outline-color:#fff}
+.notice{background:var(--accent);color:#2a1d00;font-weight:500}
+.notice .wrap{padding-top:12px;padding-bottom:12px;font-size:.95rem;line-height:1.7}
+.notice a{color:#2a1d00;font-weight:700}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer p{margin:0 0 6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">相談支援ゆに和<small>運営:株式会社ゆに和</small></a>
+    <nav aria-label="メニュー">
+      <ul>
+        <li><a href="#about">事業所について</a></li>
+        <li><a href="#service">支援内容</a></li>
+        <li><a href="#flow">ご利用の流れ</a></li>
+        <li><a href="#info">事業所情報</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="notice" role="note">
+  <div class="wrap">
+    <strong>お知らせ</strong>　相談支援ゆに和は、現在「水巻相談支援事業所」に名称変更し、活動地域も福岡県全域となっております。
+    <a href="https://mizumaki-aikokoro.github.io/">新しいホームページはこちら</a>
+  </div>
+</div>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <p class="lead-in">障害のある方とご家族のための相談窓口</p>
+      <h1>福祉サービスのこと、<br>まずはお気軽にご相談ください。</h1>
+      <p>どんなサービスが使えるのか分からない、今のサービスを見直したい。そんなときに、あなたの暮らしに合った利用計画を一緒に考えます。</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">相談したい</a>
+        <a class="btn ghost" href="#flow">ご利用の流れを見る</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="about">
+      <h2>事業所について</h2>
+      <p>相談支援ゆに和は、障害のある方が地域で安心して暮らし続けられるよう、福祉サービスの利用をお手伝いする相談支援事業所です。ご本人の思いとご家族の状況をうかがい、必要な支援につなげます。</p>
+      <p>ご相談は、ご本人だけでなく、ご家族や支援者の方からもお受けします。</p>
+    </section>
+
+    <section id="service">
+      <h2>支援内容</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>サービス等利用計画の作成</h3>
+          <p>生活の状況やご希望をうかがい、使う福祉サービスの計画を一緒に作ります。</p>
+        </div>
+        <div class="card">
+          <h3>定期的な見直し(モニタリング)</h3>
+          <p>サービスが合っているかを定期的に確認し、必要に応じて計画を見直します。</p>
+        </div>
+        <div class="card">
+          <h3>サービス事業所との連絡調整</h3>
+          <p>利用先の事業所や、行政、医療機関などとの連絡や調整をお手伝いします。</p>
+        </div>
+        <div class="card">
+          <h3>福祉サービスの利用相談</h3>
+          <p>制度の仕組みや、申請の進め方など、分からないことをお聞きします。</p>
+        </div>
+      </div>
+      <div class="note">計画相談支援の利用にあたって、ご利用者の費用負担はありません。</div>
+    </section>
+
+    <section id="flow">
+      <h2>ご利用の流れ</h2>
+      <ol class="flow">
+        <li><strong>お問い合わせ</strong><span>お電話でお気軽にご連絡ください。</span></li>
+        <li><strong>面談</strong><span>お困りごとやご希望をじっくりうかがいます。</span></li>
+        <li><strong>利用計画案の作成</strong><span>ご本人・ご家族と相談しながら作成します。</span></li>
+        <li><strong>サービスの利用開始</strong><span>利用先の事業所と連絡を取り、スタートします。</span></li>
+        <li><strong>定期的な見直し</strong><span>状況に合わせて、計画を一緒に見直します。</span></li>
+      </ol>
+    </section>
+
+    <section id="info">
+      <h2>事業所情報</h2>
+      <dl class="info">
+        <div><dt>事業所名</dt><dd>相談支援ゆに和</dd></div>
+        <div><dt>運営法人</dt><dd>株式会社ゆに和</dd></div>
+        <div><dt>所在地</dt><dd>〒811-1302<br>福岡県福岡市南区井尻5-13-12-101</dd></div>
+        <div><dt>電話番号</dt><dd>080-9193-8330</dd></div>
+        <div><dt>営業時間</dt><dd>平日 9:00〜18:00</dd></div>
+        <div><dt>休業日</dt><dd>土日祝・年末年始</dd></div>
+        <div><dt>対応地域</dt><dd>福岡市全域、福岡市と近接する市町村</dd></div>
+        <div><dt>指定番号</dt><dd>4031200639</dd></div>
+      </dl>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <h2>お問い合わせ</h2>
+        <p>相談支援ゆに和は、現在「水巻相談支援事業所」に名称変更し、活動地域も福岡県全域となっております。ご相談は、新しい事業所のホームページをご覧ください。</p>
+        <p><a class="btn ghost-on-dark" href="https://mizumaki-aikokoro.github.io/">水巻相談支援事業所のホームページへ</a></p>
+        <p style="margin-top:20px">旧事業所へのお電話:<br><span class="tel">080-9193-8330</span></p>
+        <p>受付時間:平日 9:00〜18:00(土日祝・年末年始を除く)</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>相談支援ゆに和(運営:株式会社ゆに和)</p>
+    <p>&copy; 2026 Yuniwa Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
