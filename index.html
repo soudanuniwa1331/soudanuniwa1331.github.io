@@ -106,7 +106,25 @@ dl.info dd{margin:0;overflow-wrap:anywhere}
 footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
 footer p{margin:0 0 6px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.video-title{font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin:28px 0 4px}
+.video-lead{margin:0 0 12px;font-size:.94rem;color:var(--muted)}
+.video-wrap{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}
+.video-wrap video{width:100%;height:100%;display:block}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "障がい福祉サービス利用の流れ｜水巻相談支援事業所（旧：相談支援ゆに和）",
+  "description": "お問い合わせ、面談・アセスメント、サービス等利用計画案の作成、サービス利用開始、モニタリングまで、障がい福祉サービスを利用する流れをアニメーションで紹介します。相談支援は原則、利用者負担はありません。",
+  "thumbnailUrl": "https://soudanuniwa1331.github.io/videos/riyou-no-nagare-poster.jpg",
+  "uploadDate": "2026-11-11",
+  "duration": "PT2M23S",
+  "contentUrl": "https://soudanuniwa1331.github.io/videos/riyou-no-nagare.mp4",
+  "inLanguage": "ja",
+  "publisher": {"@type": "Organization", "name": "水巻相談支援事業所", "logo": {"@type": "ImageObject", "url": "https://soudanuniwa1331.github.io/logo.png"}}
+}
+</script>
 </head>
 <body>
 
@@ -186,6 +204,14 @@ footer p{margin:0 0 6px}
         <li><strong>サービスの利用開始</strong><span>利用先の事業所と連絡を取り、スタートします。</span></li>
         <li><strong>定期的な見直し</strong><span>状況に合わせて、計画を一緒に見直します。</span></li>
       </ol>
+      <h3 class="video-title">動画で見る「障がい福祉サービス利用の流れ」</h3>
+      <p class="video-lead">お問い合わせからサービス利用開始・定期的な見直しまでを、2分半のアニメーションでご紹介します（音声・字幕付き）。</p>
+      <div class="video-wrap" id="nagare-video">
+        <video controls preload="metadata" playsinline poster="videos/riyou-no-nagare-poster.jpg">
+          <source src="videos/riyou-no-nagare.mp4" type="video/mp4">
+          お使いのブラウザは動画の再生に対応していません。<a href="videos/riyou-no-nagare.mp4">動画ファイルをダウンロード</a>
+        </video>
+      </div>
     </section>
 
     <section id="info">
