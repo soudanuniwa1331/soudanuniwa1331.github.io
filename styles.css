@@ -24,7 +24,7 @@
   nav.site-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; margin: 0; padding: 8px 0; }
   nav.site-nav a { display: block; padding: 6px 14px; text-decoration: none; color: var(--text); font-size: 0.9rem; border-radius: 20px; }
   nav.site-nav a:hover { background: var(--green-light); }
-  .hero { background: linear-gradient(135deg, var(--green-light) 0%, #ffffff 70%); padding: 44px 0 36px; }
+  .hero { background: linear-gradient(100deg, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.65) 45%, rgba(255,255,255,0.25) 100%), url("images/bg-rice-field.jpg") center 35%/cover no-repeat; padding: 44px 0 36px; }
   .hero h1 { font-size: 1.5rem; line-height: 1.5; color: var(--green-dark); margin: 0 0 14px; }
   .hero p.lead { font-size: 0.98rem; color: var(--text-sub); margin: 0; }
   .hero p.service-desc { font-size: 0.92rem; color: var(--text); background: #ffffff; border-left: 4px solid var(--green-mid); padding: 10px 14px; margin: 16px 0 0; border-radius: 4px; }
